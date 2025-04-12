@@ -1,0 +1,21 @@
+{
+  "name": "wantad",
+  "version": "1.0.0",
+  "description": "I't a platform where service providers meet up with service renders",
+  "license": "ISC",
+  "author": "Odunsi Oluwabukola",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.14.1",
+    "validator": "^13.15.0"
+  }
+}
