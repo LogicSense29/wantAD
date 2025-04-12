@@ -12,7 +12,7 @@ export const requiredAuth = async (req, res, next) => {
     try {
       const { _id } = jwt.verify(token, process.env.SECRET);
       const { rows } = await db.query(
-        "SELECT user_id FROM auth WHERE user_id = $1",
+        "SELECT user_id FROM user WHERE user_id = $1",
         [_id]
       );
 

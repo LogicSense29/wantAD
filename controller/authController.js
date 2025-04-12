@@ -298,7 +298,7 @@ export const forgetPassword = async (req, res) => {
       )}/user/reset_password/${setToken}`;
 
       await db.query(
-        "INSERT INTO password_resets (staff_id, reset_token, expires_at) VALUES($1,$2,to_timestamp($3))",
+        "INSERT INTO password_resets (user_id, reset_token, expires_at) VALUES($1,$2,to_timestamp($3))",
         [user_id, hashed, expiringTime]
       );
 
@@ -372,7 +372,7 @@ export const resetPassword = async (req, res) => {
       return res.status(400).json({ error: "Failed to update password" });
     }
   } catch (err) {
-    // Add logging for better error traceability in production
+    //logging for better error traceability in production
     console.error("Error during password reset:", err);
     return res.status(500).json({ error: err.message });
   }
